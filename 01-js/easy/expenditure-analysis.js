@@ -14,22 +14,30 @@
 */
 
 function calculateTotalSpentByCategory(transactions) {
+  console.log(transactions);
   const categoryMap = {};
 
   transactions.forEach((transaction) => {
     const { category, price } = transaction;
+
+    console.log("Category destructed : ", category);
+    console.log("Price destructed : ", price);
 
     if (category in categoryMap) {
       categoryMap[category] += price;
     } else {
       categoryMap[category] = price;
     }
+
+    console.log("categoryMap :", categoryMap);
   });
 
   const result = Object.keys(categoryMap).map((category) => ({
     category,
     totalSpent: categoryMap[category],
   }));
+
+  console.log(result);
 
   return result;
 }

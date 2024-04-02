@@ -18,6 +18,7 @@ function isAnagram(str1, str2) {
 
   // Convert strings to arrays, sort them, and then join back to strings
   let sortedStr1 = str1.split("").sort().join("");
+
   let sortedStr2 = str2.split("").sort().join("");
 
   // Compare sorted strings
